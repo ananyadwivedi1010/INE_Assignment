@@ -12,8 +12,6 @@ build/
 # Virtual environments
 venv/
 .venv/
-env/
-.env
 
 # Docker artifacts (don't commit layer cache or temp build files)
 *.tar
