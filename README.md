@@ -423,31 +423,65 @@ python scripts/detect_cve.py --url http://127.0.0.1:8081 \
 
 Evidence files are saved to `evidence/`. Store manual screenshot files in `evidence/screenshots/`.
 
-### Required Screenshots Checklist
+### 📸 Visual Evidence Gallery
 
-The following manual screenshots are stored in `evidence/screenshots/`:
+#### (a) Docker Container Status
+*Verification showing both `cve_lab_vulnerable` (port 8080) and `cve_lab_patched` (port 8081) running in healthy `Up` state.*
 
-- [x] **(a) Docker Container Status:**
-  - `06_container_status_ps.png` — `docker compose ps` showing both `cve_lab_vulnerable` (port 8080) and `cve_lab_patched` (port 8081) running in `Up` state.
+![Docker Container Status](evidence/screenshots/06_container_status_ps.png)
 
-- [x] **(b) Exploit Validation Output:**
-  - `07_path_traversal_exploit_41773.png` — Path traversal (`/etc/passwd` file read) via CVE-2021-41773 payload.
-  - `08_path_traversal_exploit_42013.png` — Path traversal (`/etc/passwd` file read) via CVE-2021-42013 double-encoded payload.
-  - `09_cgi_rce_exploit_41773.png` — RCE command execution (`id`) via CVE-2021-41773 CGI payload.
-  - `10_cgi_rce_exploit_42013.png` — RCE command execution (`id`) via CVE-2021-42013 CGI payload.
+---
 
-- [x] **(c) Detection Scanner — Vulnerable Target (Port 8080):**
-  - `11_detect_cve_vulnerable_target.png` — Phase 1 banner and Phase 2 active traversal probe output.
-  - `12_detect_cve_vulnerable_verdict.png` — Final verdict showing `[!!] FINAL VERDICT: VULNERABLE`.
+#### (b) Exploit Validation Output
 
-- [x] **(d) Detection Scanner — Patched Target (Port 8081):**
-  - `13_detect_cve_patched_target.png` — Banner inspection and active probe HTTP 400 rejection output.
-  - `14_detect_cve_patched_verdict.png` — Final verdict showing `[OK] FINAL VERDICT: PATCHED / SECURE`.
+##### Path Traversal Exploitation
+*File read (`/etc/passwd`) via CVE-2021-41773 (single-encoded) and CVE-2021-42013 (double-encoded) traversal payloads.*
 
-- [x] **Setup & Teardown Verification:**
-  - `01_docker_build_start.png` to `04_docker_build_complete.png` — Docker build context resolution and layer compilation.
-  - `05_docker_compose_up.png` — Container initial boot sequence.
-  - `15_docker_compose_down.png` — Clean lab shutdown.
+![Path Traversal CVE-2021-41773](evidence/screenshots/07_path_traversal_exploit_41773.png)
+![Path Traversal CVE-2021-42013](evidence/screenshots/08_path_traversal_exploit_42013.png)
+
+##### Remote Code Execution (RCE via CGI)
+*Command execution (`id`) via CGI handler traversal routing.*
+
+![CGI RCE CVE-2021-41773](evidence/screenshots/09_cgi_rce_exploit_41773.png)
+![CGI RCE CVE-2021-42013](evidence/screenshots/10_cgi_rce_exploit_42013.png)
+
+---
+
+#### (c) Defensive Scanner — Vulnerable Target (Port 8080)
+*Banner inspection and active non-destructive probe confirming vulnerable state.*
+
+![Vulnerable Target Probe](evidence/screenshots/11_detect_cve_vulnerable_target.png)
+![Vulnerable Final Verdict](evidence/screenshots/12_detect_cve_vulnerable_verdict.png)
+
+---
+
+#### (d) Defensive Scanner — Patched Target (Port 8081)
+*Banner inspection and active non-destructive probe confirming HTTP 400 rejection on hardened Apache 2.4.51.*
+
+![Patched Target Probe](evidence/screenshots/13_detect_cve_patched_target.png)
+![Patched Final Verdict](evidence/screenshots/14_detect_cve_patched_verdict.png)
+
+---
+
+#### Lab Setup & Teardown Screenshots
+
+<details>
+<summary><b>Click to expand Docker Build & Startup Log Screenshots</b></summary>
+
+<br>
+
+##### Docker Build Progress
+![Docker Build Start](evidence/screenshots/01_docker_build_start.png)
+![Docker Build Progress 1](evidence/screenshots/02_docker_build_progress.png)
+![Docker Build Progress 2](evidence/screenshots/03_docker_build_progress.png)
+![Docker Build Complete](evidence/screenshots/04_docker_build_complete.png)
+
+##### Container Boot & Teardown
+![Docker Compose Up](evidence/screenshots/05_docker_compose_up.png)
+![Docker Compose Down](evidence/screenshots/15_docker_compose_down.png)
+
+</details>
 
 ---
 
