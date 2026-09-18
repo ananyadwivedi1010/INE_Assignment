@@ -88,6 +88,7 @@ INE_Assignment/
 │   ├── CVE_RESEARCH_REPORT.md         # Full technical research report
 │   └── ARCHITECTURE.md                # Network isolation & component design
 └── evidence/                          # Generated at runtime — see Section 11
+    ├── screenshots/                   # Screenshot evidence subfolder
     ├── vulnerable_server_boot.txt
     ├── validate_traversal_output.txt
     ├── validate_cgi_output.txt
@@ -420,8 +421,16 @@ python scripts/detect_cve.py --url http://127.0.0.1:8081 \
     | tee evidence/detection_post_patch.txt
 ```
 
-Evidence files are in `evidence/`. Store screenshots manually under the same
-directory.
+Evidence files are saved to `evidence/`. Store manual screenshot files in `evidence/screenshots/`.
+
+### Required Screenshots Checklist
+
+The following manual screenshots should be stored in `evidence/screenshots/`:
+
+- [ ] **(a) Docker Container Status:** Screenshot of `docker compose ps` showing both `cve_lab_vulnerable` and `cve_lab_patched` running in `Up` state.
+- [ ] **(b) Exploit Execution:** Screenshot of successful path traversal (`/etc/passwd` or canary flag read) and CGI RCE command execution output against `http://127.0.0.1:8080`.
+- [ ] **(c) Detection Scanner (Vulnerable):** Screenshot of `python scripts/detect_cve.py --url http://127.0.0.1:8080` showing `[!!] FINAL VERDICT: VULNERABLE`.
+- [ ] **(d) Detection Scanner (Patched):** Screenshot of `python scripts/detect_cve.py --url http://127.0.0.1:8081` showing `[OK] FINAL VERDICT: PATCHED / SECURE`.
 
 ---
 
