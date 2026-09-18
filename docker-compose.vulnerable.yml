@@ -1,0 +1,43 @@
+# =============================================================================
+# docker-compose.vulnerable.yml — Standalone Vulnerable-Only Deployment
+#
+# Starts ONLY the Apache 2.4.49 vulnerable container.
+# Use this when you want to work with just the vulnerable target without
+# also running the patched container.
+#
+# USAGE:
+#   docker compose -f docker-compose.vulnerable.yml up -d
+#   docker compose -f docker-compose.vulnerable.yml down
+#
+# ENDPOINT: http://127.0.0.1:8080
+# =============================================================================
+
+version: "3.9"
+
+services:
+  apache-vulnerable:
+    build:
+      context: .
+      dockerfile: env/vulnerable/Dockerfile
+    container_name: cve_lab_vulnerable
+    image: cve-lab/apache-2.4.49:vulnerable
+    restart: "no"
+    ports:
+      - "127.0.0.1:8080:80"
+    networks:
+      - lab_isolated_net
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+      - NET_BIND_SERVICE
+    tmpfs:
+      - /tmp
+      - /var/run/apache2
+
+networks:
+  lab_isolated_net:
+    driver: bridge
+    internal: false

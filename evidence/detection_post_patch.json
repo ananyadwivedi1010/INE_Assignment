@@ -1,0 +1,33 @@
+{
+  "scan_metadata": {
+    "tool": "CVE-Lab detect_cve.py",
+    "target_url": "http://127.0.0.1:8081",
+    "timestamp_utc": "2026-09-18T15:22:18.390404+00:00",
+    "cves_checked": [
+      "CVE-2021-41773",
+      "CVE-2021-42013"
+    ]
+  },
+  "findings": {
+    "phase1_banner": {
+      "phase": "1-banner",
+      "server_header": "Apache",
+      "detected_version": null,
+      "vulnerable": false,
+      "confidence": "LOW",
+      "note": "Server header absent or version suppressed (ServerTokens Prod/Min). Cannot confirm or exclude vulnerability from banner alone. Relying on Phase 2 active probe."
+    },
+    "phase2_active_probe": {
+      "phase": "2-active-probe",
+      "probe_path": "/icons/.%2e/.%2e/.%2e/.%2e/etc/issue",
+      "http_status": 400,
+      "response_body_snippet": "",
+      "vulnerable": false,
+      "confidence": "HIGH",
+      "note": "HTTP 400 Bad Request \u2014 Apache 2.4.51 rejects the malformed encoded traversal path at the normalization stage."
+    }
+  },
+  "verdict": "PATCHED / SECURE",
+  "overall_confidence": "HIGH",
+  "recommendation": "Target does not appear vulnerable to CVE-2021-41773/42013. Continue to monitor for future Apache security advisories."
+}

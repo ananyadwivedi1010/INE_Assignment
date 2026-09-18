@@ -1,0 +1,43 @@
+# =============================================================================
+# docker-compose.patched.yml — Standalone Patched-Only Deployment
+#
+# Starts ONLY the Apache 2.4.51 patched container.
+# Use this when you want to run the detection scanner against only the
+# remediated target to confirm the PATCHED / SECURE verdict.
+#
+# USAGE:
+#   docker compose -f docker-compose.patched.yml up -d
+#   docker compose -f docker-compose.patched.yml down
+#
+# ENDPOINT: http://127.0.0.1:8081
+# =============================================================================
+
+version: "3.9"
+
+services:
+  apache-patched:
+    build:
+      context: .
+      dockerfile: env/patched/Dockerfile
+    container_name: cve_lab_patched
+    image: cve-lab/apache-2.4.51:patched
+    restart: "no"
+    ports:
+      - "127.0.0.1:8081:80"
+    networks:
+      - lab_isolated_net
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+      - NET_BIND_SERVICE
+    tmpfs:
+      - /tmp
+      - /var/run/apache2
+
+networks:
+  lab_isolated_net:
+    driver: bridge
+    internal: false

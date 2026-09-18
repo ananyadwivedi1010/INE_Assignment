@@ -1,0 +1,33 @@
+{
+  "scan_metadata": {
+    "tool": "CVE-Lab detect_cve.py",
+    "target_url": "http://127.0.0.1:8080",
+    "timestamp_utc": "2026-09-18T15:31:34.919223+00:00",
+    "cves_checked": [
+      "CVE-2021-41773",
+      "CVE-2021-42013"
+    ]
+  },
+  "findings": {
+    "phase1_banner": {
+      "phase": "1-banner",
+      "server_header": "Apache/2.4.49 (Unix)",
+      "detected_version": "2.4.49",
+      "vulnerable": true,
+      "confidence": "HIGH",
+      "note": "Server header explicitly declares Apache/2.4.49, which is in the known-vulnerable range (2.4.49, 2.4.50)."
+    },
+    "phase2_active_probe": {
+      "phase": "2-active-probe",
+      "probe_path": "/icons/.%2e/.%2e/.%2e/.%2e/etc/issue",
+      "http_status": 200,
+      "response_body_snippet": "Apache 2.4.49 Lab Container - Vulnerable Reference",
+      "vulnerable": true,
+      "confidence": "HIGH",
+      "note": "HTTP 200 returned with body content \u2014 traversal succeeded. Server resolved the path outside the document root."
+    }
+  },
+  "verdict": "VULNERABLE",
+  "overall_confidence": "HIGH",
+  "recommendation": "Upgrade Apache HTTP Server to version 2.4.51 or higher immediately. As an interim measure: set 'Require all denied' on <Directory />, disable mod_cgi if CGI is not required, and restrict alias directories."
+}
