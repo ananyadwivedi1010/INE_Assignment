@@ -425,12 +425,29 @@ Evidence files are saved to `evidence/`. Store manual screenshot files in `evide
 
 ### Required Screenshots Checklist
 
-The following manual screenshots should be stored in `evidence/screenshots/`:
+The following manual screenshots are stored in `evidence/screenshots/`:
 
-- [ ] **(a) Docker Container Status:** Screenshot of `docker compose ps` showing both `cve_lab_vulnerable` and `cve_lab_patched` running in `Up` state.
-- [ ] **(b) Exploit Execution:** Screenshot of successful path traversal (`/etc/passwd` or canary flag read) and CGI RCE command execution output against `http://127.0.0.1:8080`.
-- [ ] **(c) Detection Scanner (Vulnerable):** Screenshot of `python scripts/detect_cve.py --url http://127.0.0.1:8080` showing `[!!] FINAL VERDICT: VULNERABLE`.
-- [ ] **(d) Detection Scanner (Patched):** Screenshot of `python scripts/detect_cve.py --url http://127.0.0.1:8081` showing `[OK] FINAL VERDICT: PATCHED / SECURE`.
+- [x] **(a) Docker Container Status:**
+  - `06_container_status_ps.png` — `docker compose ps` showing both `cve_lab_vulnerable` (port 8080) and `cve_lab_patched` (port 8081) running in `Up` state.
+
+- [x] **(b) Exploit Validation Output:**
+  - `07_path_traversal_exploit_41773.png` — Path traversal (`/etc/passwd` file read) via CVE-2021-41773 payload.
+  - `08_path_traversal_exploit_42013.png` — Path traversal (`/etc/passwd` file read) via CVE-2021-42013 double-encoded payload.
+  - `09_cgi_rce_exploit_41773.png` — RCE command execution (`id`) via CVE-2021-41773 CGI payload.
+  - `10_cgi_rce_exploit_42013.png` — RCE command execution (`id`) via CVE-2021-42013 CGI payload.
+
+- [x] **(c) Detection Scanner — Vulnerable Target (Port 8080):**
+  - `11_detect_cve_vulnerable_target.png` — Phase 1 banner and Phase 2 active traversal probe output.
+  - `12_detect_cve_vulnerable_verdict.png` — Final verdict showing `[!!] FINAL VERDICT: VULNERABLE`.
+
+- [x] **(d) Detection Scanner — Patched Target (Port 8081):**
+  - `13_detect_cve_patched_target.png` — Banner inspection and active probe HTTP 400 rejection output.
+  - `14_detect_cve_patched_verdict.png` — Final verdict showing `[OK] FINAL VERDICT: PATCHED / SECURE`.
+
+- [x] **Setup & Teardown Verification:**
+  - `01_docker_build_start.png` to `04_docker_build_complete.png` — Docker build context resolution and layer compilation.
+  - `05_docker_compose_up.png` — Container initial boot sequence.
+  - `15_docker_compose_down.png` — Clean lab shutdown.
 
 ---
 
