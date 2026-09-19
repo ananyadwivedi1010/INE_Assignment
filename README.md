@@ -85,6 +85,7 @@ INE_Assignment/
 │   ├── validate_cgi_handling.py       # CGI routing regression validator
 │   └── detect_cve.py                  # Defensive detection scanner (PASS/FAIL)
 ├── docs/
+│   ├── technical_blog.pdf             # Technical blog deliverable (PDF format)
 │   ├── CVE_RESEARCH_REPORT.md         # Full technical research report
 │   └── ARCHITECTURE.md                # Network isolation & component design
 └── evidence/                          # Generated at runtime — see Section 11
@@ -606,6 +607,7 @@ docker compose up -d
 | NVD CVE-2021-42013 | https://nvd.nist.gov/vuln/detail/CVE-2021-42013 |
 | CISA Alert AA21-281A | https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-281a |
 | Apache httpd GitHub | https://github.com/apache/httpd |
+| Technical Blog (PDF) | [docs/technical_blog.pdf](docs/technical_blog.pdf) |
 | CVE Research Report | [docs/CVE_RESEARCH_REPORT.md](docs/CVE_RESEARCH_REPORT.md) |
 | Architecture Docs | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
 
