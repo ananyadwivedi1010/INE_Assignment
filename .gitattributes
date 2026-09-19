@@ -1,8 +1,8 @@
-# Explicitly declare binary files to prevent Git autocrlf line-ending corruption on Windows
-*.pdf binary
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.ico binary
-*.zip binary
+# Explicitly declare binary files to prevent line-ending corruption and force binary handling on GitHub
+*.pdf binary -text -diff linguist-detectable=false linguist-generated=true
+*.png binary -text -diff
+*.jpg binary -text -diff
+*.jpeg binary -text -diff
+*.gif binary -text -diff
+*.ico binary -text -diff
+*.zip binary -text -diff
