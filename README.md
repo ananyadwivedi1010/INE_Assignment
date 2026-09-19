@@ -30,6 +30,8 @@
 This lab provides a complete, reproducible environment for validating detection
 of **CVE-2021-41773** and its bypass **CVE-2021-42013** in Apache HTTP Server.
 
+📄 **Technical Blog:** The accompanying internship technical blog is available as a PDF deliverable at [`docs/technical_blog.pdf`](docs/technical_blog.pdf).
+
 **What this lab demonstrates:**
 
 | Check | Against Vulnerable (2.4.49) | Against Patched (2.4.51) |
