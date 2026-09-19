@@ -8,7 +8,7 @@
 ## Table of Contents
 
 1. [Overview](#1-overview)
-   - 📄 [Technical Blog (PDF Deliverable)](docs/technical_blog.pdf)
+   -  [Technical Blog (PDF Deliverable)](docs/technical_blog.pdf)
 2. [Prerequisites](#2-prerequisites)
 3. [Project Structure](#3-project-structure)
 4. [Quick Start](#4-quick-start)
