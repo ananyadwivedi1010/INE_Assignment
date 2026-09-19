@@ -8,6 +8,7 @@
 ## Table of Contents
 
 1. [Overview](#1-overview)
+   - 📄 [Technical Blog (PDF Deliverable)](docs/technical_blog.pdf)
 2. [Prerequisites](#2-prerequisites)
 3. [Project Structure](#3-project-structure)
 4. [Quick Start](#4-quick-start)
@@ -30,7 +31,7 @@
 This lab provides a complete, reproducible environment for validating detection
 of **CVE-2021-41773** and its bypass **CVE-2021-42013** in Apache HTTP Server.
 
-📄 **Technical Blog:** The accompanying internship technical blog is available as a PDF deliverable at [`docs/technical_blog.pdf`](docs/technical_blog.pdf).
+📄 **Technical Blog:** The accompanying technical blog is available as a PDF deliverable at [`docs/technical_blog.pdf`](docs/technical_blog.pdf).
 
 **What this lab demonstrates:**
 
