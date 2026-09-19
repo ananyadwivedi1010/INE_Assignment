@@ -403,6 +403,7 @@ ServerSignature Off
 | **CVE.org** | https://www.cve.org/CVERecord?id=CVE-2021-41773 |
 | **Qualys Blog — Technical Analysis** | https://blog.qualys.com/vulnerabilities-threat-research/2021/10/27/apache-http-server-path-traversal-remote-code-execution |
 | **Huntress Labs Analysis** | https://www.huntress.com/blog/rapid-response-critical-apache-http-server-vulnerability |
+| **Technical Blog (PDF)** | [technical_blog.pdf](technical_blog.pdf) |
 
 ---
 
