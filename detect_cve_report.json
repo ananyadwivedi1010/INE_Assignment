@@ -2,7 +2,7 @@
   "scan_metadata": {
     "tool": "CVE-Lab detect_cve.py",
     "target_url": "http://127.0.0.1:8081",
-    "timestamp_utc": "2026-09-18T15:31:13.094793+00:00",
+    "timestamp_utc": "2026-09-18T16:47:19.637922+00:00",
     "cves_checked": [
       "CVE-2021-41773",
       "CVE-2021-42013"

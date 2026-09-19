@@ -17,8 +17,8 @@ venv/
 *.tar
 docker-compose.override.yml
 
-# Evidence files — generated at runtime (commit only the placeholder README)
-evidence/*.txt
+# Evidence files — generated at runtime (include logs and placeholders)
+# evidence/*.txt
 !evidence/.gitkeep
 
 # OS / Editor artifacts

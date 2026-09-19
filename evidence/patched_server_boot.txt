@@ -1,0 +1,16 @@
+﻿cve_lab_patched  | AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.20.0.3. Set the 'ServerName' directive globally to suppress this message
+cve_lab_patched  | AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.20.0.3. Set the 'ServerName' directive globally to suppress this message
+cve_lab_patched  | [Fri Sep 18 15:12:10.667026 2026] [mpm_event:notice] [pid 1:tid 137662133923136] AH00489: Apache/2.4.51 (Unix) configured -- resuming normal operations
+cve_lab_patched  | [Fri Sep 18 15:12:10.671116 2026] [core:notice] [pid 1:tid 137662133923136] AH00094: Command line: 'httpd -D FOREGROUND'
+cve_lab_patched  | 172.20.0.1 - - [18/Sep/2026:15:22:05 +0000] "GET / HTTP/1.1" 200 70 "-" "-"
+cve_lab_patched  | 172.20.0.1 - - [18/Sep/2026:15:22:05 +0000] "GET /icons/.%2e/.%2e/.%2e/.%2e/etc/passwd HTTP/1.1" 400 226 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_patched  | [Fri Sep 18 15:22:05.163036 2026] [core:error] [pid 19:tid 137662115989248] [client 172.20.0.1:55776] AH10244: invalid URI path (/icons/.%2e/.%2e/.%2e/.%2e/etc/passwd)
+cve_lab_patched  | [Fri Sep 18 15:22:05.178493 2026] [core:error] [pid 8:tid 137662115989248] [client 172.20.0.1:55780] AH10244: invalid URI path (/icons/.%%32%65/.%%32%65/.%%32%65/.%%32%65/etc/passwd)
+cve_lab_patched  | 172.20.0.1 - - [18/Sep/2026:15:22:05 +0000] "GET /icons/.%%32%65/.%%32%65/.%%32%65/.%%32%65/etc/passwd HTTP/1.1" 400 226 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_patched  | [Fri Sep 18 15:22:05.333170 2026] [core:error] [pid 8:tid 137662099187456] [client 172.20.0.1:55782] AH10244: invalid URI path (/cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh)
+cve_lab_patched  | 172.20.0.1 - - [18/Sep/2026:15:22:05 +0000] "POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1" 400 226 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_patched  | [Fri Sep 18 15:22:05.348565 2026] [core:error] [pid 8:tid 137661889115904] [client 172.20.0.1:55784] AH10244: invalid URI path (/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh)
+cve_lab_patched  | 172.20.0.1 - - [18/Sep/2026:15:22:05 +0000] "POST /cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh HTTP/1.1" 400 226 "-" "CVE-Lab-Validator/1.0 (Research Only)"
+cve_lab_patched  | 172.20.0.1 - - [18/Sep/2026:15:22:18 +0000] "GET / HTTP/1.1" 200 70 "-" "CVE-Lab-Scanner/1.0 (Security Research)"
+cve_lab_patched  | 172.20.0.1 - - [18/Sep/2026:15:22:18 +0000] "GET /icons/.%2e/.%2e/.%2e/.%2e/etc/issue HTTP/1.1" 400 226 "-" "CVE-Lab-Scanner/1.0 (Security Research)"
+cve_lab_patched  | [Fri Sep 18 15:22:18.389182 2026] [core:error] [pid 19:tid 137661805221632] [client 172.20.0.1:34670] AH10244: invalid URI path (/icons/.%2e/.%2e/.%2e/.%2e/etc/issue)
