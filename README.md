@@ -31,7 +31,7 @@
 This lab provides a complete, reproducible environment for validating detection
 of **CVE-2021-41773** and its bypass **CVE-2021-42013** in Apache HTTP Server.
 
-📄 **Technical Blog:** The accompanying technical blog is available as a PDF deliverable at [`docs/technical_blog.pdf`](docs/technical_blog.pdf).
+ **Technical Blog:** The accompanying technical blog is available as a PDF deliverable at [`docs/technical_blog.pdf`](docs/technical_blog.pdf).
 
 **What this lab demonstrates:**
 
@@ -427,7 +427,7 @@ python scripts/detect_cve.py --url http://127.0.0.1:8081 \
 
 Evidence files are saved to `evidence/`. Store manual screenshot files in `evidence/screenshots/`.
 
-### 📸 Visual Evidence Gallery
+### Visual Evidence Gallery
 
 #### (a) Docker Container Status
 *Verification showing both `cve_lab_vulnerable` (port 8080) and `cve_lab_patched` (port 8081) running in healthy `Up` state.*
