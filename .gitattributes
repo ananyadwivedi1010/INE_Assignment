@@ -1,0 +1,8 @@
+# Explicitly declare binary files to prevent Git autocrlf line-ending corruption on Windows
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
